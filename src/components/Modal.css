@@ -1,0 +1,2146 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 1rem;
+}
+
+.modal {
+  background: white;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 900px; /* Increased for better layout */
+  max-height: 95vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  animation: modalSlideIn 0.4s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 1.5rem 0 1.5rem;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.modal-content {
+  padding: 2rem;
+}
+
+/* Enhanced Modal Styles */
+.owner-profile-modal,
+.payment-monitoring,
+.tenants-management,
+.add-room-modal,
+.notifications-modal,
+.room-management {
+  max-width: 1000px;
+}
+
+/* Profile Tabs */
+.profile-tabs {
+  display: flex;
+  border-bottom: 2px solid #f1f3f4;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  color: #6b7280;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.tab-btn.active {
+  color: #667eea;
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #667eea;
+  border-radius: 2px;
+}
+
+.tab-btn:hover {
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.05);
+}
+
+/* Profile Photo Section */
+.profile-photo-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 12px;
+}
+
+.current-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #667eea;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Form Grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Building Overview */
+.building-overview {
+  margin-bottom: 2rem;
+}
+
+.building-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 12px;
+}
+
+.building-card h4 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.building-card p {
+  margin: 0.25rem 0 0 0;
+  opacity: 0.9;
+}
+
+/* Settings Sections */
+.settings-section {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fafbfc;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-title h4 {
+  margin: 0;
+  color: #374151;
+}
+
+/* Unit Types */
+.unit-types {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+/* Rent Rates */
+.rent-rates {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.rate-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.rate-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.rate-input span {
+  padding: 0.75rem;
+  background: #f3f4f6;
+  border-right: 1px solid #d1d5db;
+  font-weight: 600;
+  color: #374151;
+}
+
+.rate-input input {
+  border: none;
+  padding: 0.75rem;
+  flex: 1;
+  outline: none;
+}
+
+/* Utility Rates */
+.utility-rates {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.utility-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.utility-item label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.utility-item .rate-input {
+  width: 120px;
+}
+
+/* Documents */
+.upload-section {
+  margin-bottom: 2rem;
+}
+
+.upload-area {
+  border: 2px dashed #d1d5db;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.upload-area:hover {
+  border-color: #667eea;
+  background: rgba(102, 126, 234, 0.05);
+}
+
+.upload-area p {
+  margin: 0.5rem 0;
+  font-weight: 600;
+  color: #374151;
+}
+
+.upload-area small {
+  color: #6b7280;
+}
+
+.documents-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.document-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: white;
+}
+
+.doc-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #667eea;
+}
+
+.doc-info {
+  flex: 1;
+}
+
+.doc-info h5 {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.doc-info p {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.doc-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-icon {
+  background: none;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #6b7280;
+}
+
+.btn-icon:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.btn-icon.danger:hover {
+  background: #fee2e2;
+  color: #dc2626;
+  border-color: #fecaca;
+}
+
+/* Payment Monitoring */
+.monitoring-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.period-selector select {
+  min-width: 160px;
+}
+
+.payment-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.payment-stat-card {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  position: relative;
+  overflow: hidden;
+}
+
+.payment-stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.payment-stat-card.collected::before {
+  background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.payment-stat-card.pending::before {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+}
+
+.payment-stat-card.overdue::before {
+  background: linear-gradient(90deg, #ef4444, #f87171);
+}
+
+.payment-stat-card.collection-rate::before {
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+}
+
+.payment-stat-card .stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.payment-stat-card .stat-details h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.payment-stat-card .amount {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 0.5rem 0;
+  line-height: 1;
+}
+
+.payment-stat-card .change {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.payment-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: white;
+  overflow: hidden;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f8fafc;
+}
+
+.section-header h4 {
+  margin: 0;
+  color: #374151;
+}
+
+.monthly-breakdown,
+.transactions-list {
+  padding: 1.5rem;
+}
+
+.tenant-payment-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.tenant-payment-row:last-child {
+  border-bottom: none;
+}
+
+.tenant-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tenant-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+}
+
+.tenant-info h5 {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.tenant-info p {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.payment-details {
+  text-align: right;
+}
+
+.amount-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: flex-end;
+}
+
+.amount {
+  font-weight: 600;
+  color: #374151;
+}
+
+.penalty {
+  font-size: 0.75rem;
+  color: #dc2626;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+}
+
+.status.paid {
+  background: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+}
+
+.status.pending {
+  background: rgba(245, 158, 11, 0.1);
+  color: #d97706;
+}
+
+.status.overdue {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+}
+
+.monitoring-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+/* Tenant Management */
+.tenants-header {
+  margin-bottom: 2rem;
+}
+
+.tenants-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.search-filter {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+}
+
+.search-box {
+  position: relative;
+  flex: 1;
+  max-width: 300px;
+}
+
+.search-box svg {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+}
+
+.search-box input {
+  padding-left: 2.5rem;
+}
+
+.tenants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.tenant-card.detailed {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: white;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.tenant-card.detailed:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.tenant-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.tenant-basic-info {
+  flex: 1;
+}
+
+.tenant-basic-info h4 {
+  margin: 0 0 0.25rem 0;
+  color: #374151;
+}
+
+.tenant-basic-info p {
+  margin: 0 0 0.5rem 0;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.tenant-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+}
+
+.tenant-status.active {
+  background: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+}
+
+.tenant-details {
+  padding: 1rem 1.5rem;
+}
+
+.detail-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.payment-summary {
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.payment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.payment-item:last-child {
+  margin-bottom: 0;
+}
+
+.payment-item span:first-child {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.payment-item .amount.overdue {
+  color: #dc2626;
+}
+
+.tenant-documents {
+  padding: 1rem 1.5rem;
+  background: #fafbfc;
+}
+
+.documents-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.documents-header h5 {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.documents-preview {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.doc-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.doc-chip.more {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+.tenant-actions {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #f3f4f6;
+}
+
+.btn.btn-sm {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.btn.btn-outline {
+  background: white;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.btn.btn-outline:hover {
+  background: #f9fafb;
+}
+
+.tenants-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  margin-top: 2rem;
+}
+
+.summary-stats {
+  display: flex;
+  gap: 2rem;
+}
+
+.summary-item {
+  text-align: center;
+}
+
+.summary-item h4 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #374151;
+}
+
+.summary-item p {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.bulk-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Base Button Styles */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: #667eea;
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #5a67d8;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: #6b7280;
+  color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #4b5563;
+}
+
+/* Form Control Styles */
+.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  background: white;
+  box-sizing: border-box;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-control-sm {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+}
+
+/* Notification History Modal */
+.notification-history-modal {
+  max-width: 1000px;
+}
+
+.notification-history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f1f3f4;
+}
+
+.history-stats {
+  display: flex;
+  gap: 2rem;
+}
+
+.history-stats .stat-item {
+  text-align: center;
+}
+
+.history-stats .stat-number {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 0.25rem;
+}
+
+.history-stats .stat-label {
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.notification-filters {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.notification-history-list {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #6b7280;
+}
+
+.empty-state svg {
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-state h4 {
+  margin: 0 0 0.5rem 0;
+  color: #374151;
+}
+
+.empty-state p {
+  margin: 0;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.history-notification-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.history-notification-item:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
+}
+
+.history-notification-item.common {
+  border-left: 4px solid #10b981;
+}
+
+.history-notification-item.personal {
+  border-left: 4px solid #667eea;
+}
+
+.notification-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.notification-type-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  background: #f3f4f6;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.notification-type-badge.common {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+}
+
+.notification-type-badge.personal {
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+}
+
+.priority-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.priority-badge.low {
+  background: rgba(34, 197, 94, 0.1);
+  color: #16a34a;
+}
+
+.priority-badge.medium {
+  background: rgba(251, 146, 60, 0.1);
+  color: #ea580c;
+}
+
+.priority-badge.high {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+}
+
+.notification-date {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.notification-content h4 {
+  margin: 0 0 0.5rem 0;
+  color: #374151;
+  font-size: 1.1rem;
+}
+
+.notification-content p {
+  margin: 0 0 1rem 0;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.notification-meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.category-tag {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.category-tag.info {
+  background: rgba(59, 130, 246, 0.1);
+  color: #2563eb;
+}
+
+.category-tag.warning {
+  background: rgba(245, 158, 11, 0.1);
+  color: #d97706;
+}
+
+.category-tag.urgent {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+}
+
+.category-tag.maintenance {
+  background: rgba(168, 85, 247, 0.1);
+  color: #7c3aed;
+}
+
+.category-tag.payment {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+}
+
+.tenant-info {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.notification-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.history-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.btn-danger {
+  background: #dc2626;
+  color: white;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: #b91c1c;
+}
+
+/* Form Group Styles */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Additional Form Elements */
+select.form-control {
+  cursor: pointer;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Modal Actions */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-actions {
+    flex-direction: column;
+  }
+  
+  .btn {
+    justify-content: center;
+  }
+}
+
+.modal-content h3 {
+  color: #374151;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+}
+
+/* Balance Modal Styles */
+.balance-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.balance-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.balance-item svg {
+  color: #667eea;
+}
+
+.balance-item div p {
+  margin: 0 0 0.25rem 0;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.balance-item div h2 {
+  margin: 0;
+  color: #374151;
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.balance-details {
+  margin-top: 1rem;
+}
+
+.balance-details h4 {
+  color: #374151;
+  font-size: 1.125rem;
+  margin: 0 0 1rem 0;
+}
+
+.transaction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.transaction:last-child {
+  border-bottom: none;
+}
+
+.amount {
+  font-weight: 600;
+}
+
+.amount.positive {
+  color: #059669;
+}
+
+.amount.negative {
+  color: #dc2626;
+}
+
+.amount.overdue {
+  color: #d97706;
+}
+
+.amount.security {
+  color: #10b981;
+  font-style: italic;
+}
+
+/* Enhanced Balance Modal Styles */
+.balance-modal {
+  max-width: 700px !important;
+}
+
+.balance-overview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.balance-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  background: #f8fafc;
+}
+
+.balance-card.primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.balance-card.warning {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+}
+
+.balance-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+}
+
+.balance-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+}
+
+.balance-card .balance-info p {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+.balance-card .balance-info h2 {
+  margin: 0 0 0.25rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.balance-card .balance-info small {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+/* Deposit Section */
+.deposit-section {
+  background: #f8f9fa;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.deposit-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  color: #495057;
+}
+
+.deposit-header h4 {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.deposit-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid #dee2e6;
+}
+
+.deposit-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.deposit-amount,
+.deposit-status {
+  text-align: center;
+}
+
+.deposit-amount .label,
+.deposit-status .label {
+  display: block;
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.deposit-amount .amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #28a745;
+}
+
+.deposit-status .status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.deposit-status .status.paid {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.deposit-info {
+  margin-bottom: 1rem;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.info-row:last-child {
+  margin-bottom: 0;
+}
+
+.info-row svg {
+  color: #17a2b8;
+  flex-shrink: 0;
+}
+
+.deposit-note {
+  background: #e7f3ff;
+  border: 1px solid #b8daff;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.deposit-note p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #004085;
+  line-height: 1.5;
+}
+
+/* Rental Summary */
+.rental-summary {
+  background: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.rental-summary h4 {
+  margin: 0 0 1rem 0;
+  color: #495057;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 0.5rem;
+}
+
+.rental-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.rental-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.rental-item span:first-child {
+  color: #6c757d;
+  font-size: 0.875rem;
+}
+
+.rental-item .amount {
+  font-weight: 600;
+  color: #495057;
+}
+
+/* Transactions Section */
+.transactions-section {
+  background: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.transactions-section h4 {
+  margin: 0 0 1rem 0;
+  color: #495057;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 0.5rem;
+}
+
+.transaction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.transaction-list .transaction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+}
+
+.transaction-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.transaction-info .desc {
+  font-weight: 500;
+  color: #495057;
+  font-size: 0.875rem;
+}
+
+.transaction-info .date {
+  font-size: 0.75rem;
+  color: #6c757d;
+}
+
+.transaction-list .amount {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+/* Dark theme for enhanced balance modal */
+.dark .deposit-section {
+  background: #374151;
+  border-color: #4b5563;
+}
+
+.dark .deposit-card {
+  background: #4b5563;
+  border-color: #6b7280;
+}
+
+.dark .deposit-header {
+  color: #f9fafb;
+}
+
+.dark .deposit-amount .amount {
+  color: #10b981;
+}
+
+.dark .deposit-note {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: #3b82f6;
+}
+
+.dark .deposit-note p {
+  color: #bfdbfe;
+}
+
+.dark .rental-summary,
+.dark .transactions-section {
+  background: #374151;
+  border-color: #4b5563;
+}
+
+.dark .rental-summary h4,
+.dark .transactions-section h4 {
+  color: #f9fafb;
+  border-color: #4b5563;
+}
+
+.dark .rental-item span:first-child,
+.dark .transaction-info .desc {
+  color: #d1d5db;
+}
+
+.dark .rental-item .amount,
+.dark .transaction-info .date {
+  color: #f9fafb;
+}
+
+.dark .transaction-list .transaction {
+  background: #4b5563;
+  border-color: #6b7280;
+}
+
+/* Bills Payment Modal */
+.bills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.bill-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.bill-item input[type="checkbox"] {
+  display: none;
+}
+
+.bill-item label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.bill-item input[type="checkbox"]:checked + label {
+  background: #eff6ff;
+  border-color: #3b82f6;
+}
+
+.bill-item label:hover {
+  background: #f9fafb;
+}
+
+.bill-item label div p {
+  margin: 0 0 0.25rem 0;
+  font-weight: 500;
+  color: #374151;
+}
+
+.bill-item label div small {
+  color: #6b7280;
+  font-size: 0.75rem;
+}
+
+.bill-item label span {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.payment-total {
+  text-align: right;
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+  color: #374151;
+}
+
+.payment-method {
+  margin-bottom: 1.5rem;
+}
+
+.payment-method label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* Tenants Table */
+.tenants-table {
+  overflow-x: auto;
+}
+
+.tenants-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.tenants-table th,
+.tenants-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.tenants-table th {
+  background: #f9fafb;
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.875rem;
+}
+
+.tenants-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.status-active {
+  background: #d1fae5;
+  color: #065f46;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.status-overdue {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Payment Stats */
+.payment-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+}
+
+.stat-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: #6b7280;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.stat-card p {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.recent-payments h4 {
+  color: #374151;
+  font-size: 1.125rem;
+  margin: 0 0 1rem 0;
+}
+
+.payment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.payment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: #f9fafb;
+  border-radius: 6px;
+}
+
+.payment-item div p {
+  margin: 0 0 0.25rem 0;
+  font-weight: 500;
+  color: #374151;
+}
+
+.payment-item div small {
+  color: #6b7280;
+  font-size: 0.75rem;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.btn-primary {
+  background: #667eea;
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #5a6fd8;
+  transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Dark theme support */
+.dark .modal {
+  background: #1f2937;
+}
+
+.dark .modal-content h3 {
+  color: #f9fafb;
+}
+
+.dark .modal-close {
+  color: #d1d5db;
+}
+
+.dark .modal-close:hover {
+  background: #374151;
+  color: #f9fafb;
+}
+
+.dark .balance-item {
+  background: #374151;
+  border-color: #4b5563;
+}
+
+.dark .balance-item div h2 {
+  color: #f9fafb;
+}
+
+.dark .form-control {
+  background: #374151;
+  border-color: #4b5563;
+  color: #f9fafb;
+}
+
+.dark .tenants-table th {
+  background: #374151;
+  color: #f9fafb;
+}
+
+.dark .tenants-table td {
+  color: #d1d5db;
+}
+
+/* Profile Modal Styles */
+.preview-section {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.current-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 2px dashed #d1d5db;
+}
+
+.current-photo p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.profile-avatar-large {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #667eea;
+}
+
+.profile-info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-item label {
+  font-weight: 600;
+  color: #374151;
+  margin: 0;
+}
+
+.info-item span {
+  color: #6b7280;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-row .form-group {
+  margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modal {
+    max-width: 95vw;
+    margin: 1rem;
+  }
+  
+  .payment-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .balance-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+}
+
+/* Tenant Selection Styles */
+.tenant-selection {
+  margin-bottom: 1.5rem;
+}
+
+.tenant-selection label {
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.tenant-list {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f9fafb;
+}
+
+.tenant-checkbox {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin: 0 !important;
+}
+
+.tenant-checkbox:last-child {
+  border-bottom: none;
+}
+
+.tenant-checkbox:hover {
+  background: #f3f4f6;
+}
+
+.tenant-checkbox input[type="checkbox"] {
+  margin-right: 0.75rem;
+  margin: 0;
+  margin-right: 0.75rem;
+}
+
+.tenant-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.tenant-info span {
+  font-weight: 500;
+  color: #374151;
+}
+
+.tenant-info small {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-left: auto;
+}
+
+.loading-message, .no-tenants-message {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.loading-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.loading-message::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border: 2px solid #e5e7eb;
+  border-top: 2px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.no-tenants-message {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+@media (max-width: 480px) {
+  .modal-overlay {
+    padding: 0;
+  }
+  
+  .modal {
+    max-width: 100vw;
+    max-height: 100vh;
+    border-radius: 0;
+    margin: 0;
+  }
+}
+
+/* ManageBillsModal Styles */
+.manage-bills-modal {
+  max-width: 90vw;
+  width: 1200px;
+}
+
+.bill-tabs {
+  display: flex;
+  border-bottom: 2px solid #e5e7eb;
+  margin-bottom: 2rem;
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border: none;
+  background: none;
+  color: #6b7280;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.tab-btn:hover {
+  color: #374151;
+  background: #f9fafb;
+}
+
+.tab-btn.active {
+  color: #3b82f6;
+  border-bottom-color: #3b82f6;
+  background: #eff6ff;
+}
+
+.generate-bills-tab,
+.manage-bills-tab,
+.payments-tab {
+  max-height: 60vh;
+  overflow-y: auto;
+}
